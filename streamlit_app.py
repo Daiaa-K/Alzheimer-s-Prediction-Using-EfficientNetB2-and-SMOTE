@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 model = load_model("Alzheimer's VGG16 model.keras")
 
 # Function to preprocess the image
-def preprocess_image(img, target_size=(224, 224)):
+def preprocess_image(img, target_size=(224,224,3)):
     # Resize the image
     img = img.resize(target_size)
     
