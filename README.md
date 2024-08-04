@@ -1,4 +1,4 @@
-# Alzheimer-s-Prediction-Using-VGG16-and-SMOTE
+# Alzheimer-s-Prediction-Using-EfficientNet-and-SMOTE
 Predicting Alzheimer's disease stage and upsampling the data using SMOTE method
 
 - Read the data and plotted the number of images in each class, found out that the data was imbalanced 📊
