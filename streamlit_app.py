@@ -12,8 +12,8 @@ labels = ['MildDemented', 'ModerateDemented', 'NonDemented','VeryMildDemented']
 
 # Streamlit app title
 
-st.title('Image Classification with Keras')
-st.write('Upload an image to classify it using a pre-trained model.')
+st.title('Alzheimer\'s detection')
+st.write('Upload an image to classify it.')
 
 # Sidebar for file upload
 st.sidebar.header('Upload Image')
