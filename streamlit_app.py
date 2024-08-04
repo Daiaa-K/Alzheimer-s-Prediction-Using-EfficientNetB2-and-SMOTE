@@ -6,7 +6,7 @@ from tensorflow import keras
 from tensorflow.keras.models import load_model
 
 # Load your custom model
-model = load_model("Alzheimer's VGG16 model.keras")
+model = load_model("alzheimer's_model.keras")
 
 labels = ['MildDemented', 'ModerateDemented', 'NonDemented','VeryMildDemented'] 
 
