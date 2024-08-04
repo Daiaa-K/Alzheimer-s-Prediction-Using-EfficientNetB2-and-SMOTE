@@ -13,9 +13,11 @@ labels = ['MildDemented', 'ModerateDemented', 'NonDemented','VeryMildDemented']
 # Streamlit app title
 
 st.title('Image Classification with Keras')
+st.write('Upload an image to classify it using a pre-trained model.')
 
-# File uploader
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+# Sidebar for file upload
+st.sidebar.header('Upload Image')
+uploaded_file = st.sidebar.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     # Open the image file
@@ -23,15 +25,25 @@ if uploaded_file is not None:
 
     # Display the uploaded image
     st.image(image, caption='Uploaded Image', use_column_width=True)
+    
+    # Add a spinner while processing
+    with st.spinner('Processing...'):
+        # Preprocess the image
+        image = image.resize((224, 224))  # Resize the image to the size your model expects
+        image_array = np.array(image) 
+        image_array = np.expand_dims(image_array, axis=0)  # Add batch dimension
 
-    # Preprocess the image
-    image = image.resize((224, 224))  # Resize the image to the size your model expects
-    image_array = np.array(image) # Rescale the image
-    image_array = np.expand_dims(image, axis=0)  # Add batch dimension
-
-    # Make predictions
-    predictions = model.predict(image_array)
-    predicted_label = labels[np.argmax(predictions)]
+        # Make predictions
+        predictions = model.predict(image_array)
+        predicted_label = labels[np.argmax(predictions)]
 
     # Display the prediction
-    st.write(f'Prediction: {predicted_label}')
+    st.success(f'Prediction: {predicted_label}')
+else:
+    st.info('Please upload an image to classify.')
+
+# Footer
+st.sidebar.markdown("""
+---
+Created by [Diaa_K](https://github.com/your-github-profile)
+""")
