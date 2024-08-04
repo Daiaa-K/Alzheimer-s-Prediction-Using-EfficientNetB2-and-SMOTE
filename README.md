@@ -7,7 +7,9 @@ Predicting Alzheimer's disease stage and upsampling the data using SMOTE method
 - Created our VGG16 model and fine tuned it. 🔧 
 - Trained the model and evaluated it. 🏃‍♂️ 
 
-Model achieved 98% accuracy on train data and 95% accuracy on test data.
+Model achieved 99% accuracy on train data and 99% accuracy on test data.
+
+Also did as streamlit app to showcase the model
 
 Link to my notebook:-https://lnkd.in/edZcj4J6
 Link to the data:-https://lnkd.in/eNZQ8HXB
