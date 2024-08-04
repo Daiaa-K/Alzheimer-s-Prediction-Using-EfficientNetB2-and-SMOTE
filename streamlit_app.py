@@ -27,7 +27,7 @@ if uploaded_file is not None:
     # Preprocess the image
     image = image.resize((224, 224))  # Resize the image to the size your model expects
     #image_array = np.array(image) / 255.0  # Rescale the image
-    image_array = np.expand_dims(image_array, axis=0)  # Add batch dimension
+    image_array = np.expand_dims(image, axis=0)  # Add batch dimension
 
     # Make predictions
     predictions = model.predict(image_array)
