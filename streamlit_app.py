@@ -31,7 +31,7 @@ if uploaded_file is not None:
 
     # Make predictions
     predictions = model.predict(image_array)
-    predicted_label = labels[np.argmax(predictions,axis=1)]
+    predicted_label = labels[np.argmax(predictions)]
 
     # Display the prediction
     st.write(f'Prediction: {predicted_label}')
